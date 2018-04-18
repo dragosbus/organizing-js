@@ -58,12 +58,9 @@ header > .controls > a {
 
 #carousel {
 	box-sizing: border-box;
-	position: absolute;
-	top: 100px;
-	width: 50%;
 	height: 290px;
 	padding: 20px;
-	background-color: #bcd1ab;
+	background-color: #3AC162;
 }
 
 #carousel > .content {
@@ -108,6 +105,17 @@ header > .controls > a {
 	position: absolute;
 	font-size: 1.5em;
 	bottom: 0px;
+	border: none;
+	background: none;
+	font-size: 4rem;
+	color: #fff;
+	font-weight: 300;
+	cursor: pointer;
+	transition: color 0.55s ease-in;
+}
+
+#carousel>.controls>button:hover {
+	color: rgb(75, 142, 219);
 }
 
 #carousel > .controls > .left {
@@ -120,13 +128,8 @@ header > .controls > a {
 
 #details {
 	box-sizing: border-box;
-	position: absolute;
-	top: 100px;
-	right: 0px;
-	width: 45%;
 	height: 500px;
 	padding: 20px;
-	background-color: #a2cde8;
 }
 
 #details > .content {
@@ -135,7 +138,7 @@ header > .controls > a {
 	width: 100%;
 	height: 100%;
 	padding: 10px;
-	background-color: #c3e3f7;
+	background-color: #15c96681;
 	overflow-y: scroll;
 }
 
@@ -176,15 +179,10 @@ header > .controls > a {
 }
 
 #modal {
-	position: absolute;
 	display: none;
-	width: 500px;
-	height: 400px;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	background-color: #fff;
-	border: 3px solid #c69;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 #register,
@@ -195,9 +193,14 @@ header > .controls > a {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
-#register h1 {
+#register h1,
+#login h1 {
 	width: 100%;
 	font-size: 2.5rem;
 	text-align: center;
@@ -255,9 +258,74 @@ header > .controls > a {
 	cursor: pointer;
 }
 
+.form p input[type="button"]:hover,
+.form p input[type="button"]:focus {
+	background: rgb(30, 86, 139);
+}
+
+.exit {
+	position: absolute;
+	top: 20px;
+	right: 50px;
+	border: none;
+	background: none;
+	font-size: 4rem;
+	cursor: pointer;
+	color: rgba(180, 48, 121, 0.527);
+	transition: color 0.55s ease-out;
+}
+
+.exit:hover {
+	color:rgba(180, 48, 121, 0.979);
+}
+
+.fade-in {
+	animation-name: fade-in;
+	animation-duration: 0.55s;
+	animation-timing-function: linear;
+}
+
+.fade-out {
+	animation-name: fade-out;
+	animation-duration: 0.55s;
+	animation-timing-function: linear;
+}
+
 @media (min-width: 720px) {
 	.form p input,
 	.form p label {
 		width: 40%;	
+	}
+
+	#carousel {
+		position: absolute;
+		top: 100px;
+		width: 50%;
+		height: 290px;
+		padding: 20px;
+	}
+
+	#details {
+		position: absolute;
+		right: 0px;
+		width: 45%;
+	}
+}
+
+@keyframes fade-in {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }

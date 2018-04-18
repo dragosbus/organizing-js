@@ -5,7 +5,7 @@ const pages = {
         <div class="form">
 	        <p>
 		        <label for="myemail">email:</label>
-		        <input id="myemail" rel="js-myemail">
+		        <input id="myemail" class="first" rel="js-myemail">
 	        </p>
 	        <p>
 		        <label for="mypw">password:</label>
@@ -15,6 +15,7 @@ const pages = {
 		        <input type="button" value="login" rel="js-login">
 	        </p>
         </div>
+        <button class="exit">X</button>
     </section>`;
 
         this.register = `<section id="register">
@@ -22,7 +23,7 @@ const pages = {
 		        <h1>Register</h1>
 		        <p>
 			        <label for="myname">name:</label>
-			        <input id="myname" rel="js-myname">
+			        <input id="myname" class="first" rel="js-myname">
 		        </p>
 		        <p>
 			        <label for="myemail">email:</label>
@@ -39,7 +40,10 @@ const pages = {
 		        <p>
 			        <input type="button" value="Register" rel="js-register">
 		        </p>
-	        </div>
+            </div>
+            <button class="exit">X</button>
         </section>`
     }
 };
+
+pages.init();
