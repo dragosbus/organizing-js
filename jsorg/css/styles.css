@@ -1,6 +1,7 @@
 html {
 	box-sizing: border-box;
 	font-size: 10px;
+	height: 100%;
 }
 
 *,*::after, *::before {
@@ -15,6 +16,7 @@ html {
 body {
 	background-color: #e6e6e6;
 	font-family: 'Open Sans', sans-serif;
+	height: 100%;
 }
 
 #page {
@@ -181,4 +183,64 @@ header > .controls > a {
 	transform: translate(-50%,-50%);
 	background-color: #fff;
 	border: 3px solid #c69;
+}
+
+#register {
+	width: 100%;
+	height: 100%;
+	background: #2DD55F;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#register h1 {
+	width: 100%;
+	font-size: 2.5rem;
+	text-align: center;
+	color: #fff;
+	margin-bottom: 5rem;
+}
+
+.form {
+	width: 90%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.form p {
+	display: flex;
+	flex-direction: column;
+}
+
+.form p input {
+	width: 40%;
+	margin: 0.5rem auto;
+	height: 4rem;
+	border-radius: 0.6rem;
+	background: none;
+	border: 2px solid rgba(0,0,0,0.10);
+	outline: none;
+	padding: 0.5rem 1.5rem;
+	font-size: 1.6rem;
+	transition: all 0.6s ease-in,
+				border 1.5s ease-out;
+}
+
+.form p input:focus {
+	background: rgba(255,255,255,0.4);
+	border: none;
+}
+
+.form p label {
+	font-size: 1.6rem;
+	color: #fff;
+}
+
+.form p input[type="button"] {
+	background: #2C287A;
+	color: #fff;
+	width: 10%;
+	font-size: 1.5rem;
+	padding: 0;
 }
