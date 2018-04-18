@@ -37,6 +37,8 @@ header {
 header > .logo {
 	font-size: 2.2rem;
 	color: #fff;
+	text-decoration: none;
+	background: none;
 }
 
 header > .controls {
@@ -185,7 +187,8 @@ header > .controls > a {
 	border: 3px solid #c69;
 }
 
-#register {
+#register,
+#login{
 	width: 100%;
 	height: 100%;
 	background: #2DD55F;
