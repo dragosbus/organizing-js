@@ -1,8 +1,8 @@
-let modal = select('[rel="js-modal"]');
-
-// put event handlers for header links here
-const headerHandler = () => {
-    click(select('[rel="js-controls"]'), e => {
+const Header = (function() {
+    
+    let modal;
+    
+    const headerHandler = e => {
         e.preventDefault();
         e.stopPropagation();
 
@@ -14,20 +14,27 @@ const headerHandler = () => {
             select('#page').style.display = 'none'; 
         },550);
         exitModal(select('.exit'));
-    });
-};
+    };
 
 
-const exitModal = btn => {
-    click(btn, () => {
-        modal.classList.add('fade-out');
-        setTimeout(() => {
-            modal.style.display = 'none';
-            modal.classList.remove('fade-in');
-            modal.classList.remove('fade-out');
-        }, 550);
-        select('#page').style.display = 'block';
-    });
-};
-
-headerHandler();
+    const exitModal = btn => {
+        click(btn, () => {
+            modal.classList.add('fade-out');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.classList.remove('fade-in');
+                modal.classList.remove('fade-out');
+            }, 550);
+            select('#page').style.display = 'block';
+        });
+    };
+    
+    const init = () => {
+        modal = select('[rel="js-modal"]');
+        const controls = select('[rel="js-controls"]');
+        click(controls, headerHandler);
+    };
+    
+    return {init};
+    
+}());

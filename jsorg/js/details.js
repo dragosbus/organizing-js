@@ -1,7 +1,15 @@
 const Details = (function() {
 	
-	const items = select("[rel='js-items']");
-	const detailPage = select("[rel='js-details']");
+	let detailPage;
+	
+	const clickHandler = e => {
+		e.preventDefault();
+		e.stopPropagation();
+		let t = e.target;
+			if(t.classList.contains("item")) {
+				get(t);
+			}
+	};
 	
 	const get = t => {
 		let url = t.getAttribute("rel");
@@ -12,18 +20,11 @@ const Details = (function() {
 	};
 	
 	const init = () => {
-		click(items, e=>{
-			e.preventDefault();
-			e.stopPropagation();
-			let t = e.target;
-			if(t.classList.contains("item")) {
-				get(t);
-			}
-		});
+		const items = select("[rel='js-items']");
+		detailPage = select("[rel='js-details']");
+		click(items, clickHandler);
 	};
 	
 	return {init};
 	
 }());
-
-document.addEventListener("DOMContentLoaded", Details.init);

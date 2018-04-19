@@ -141,6 +141,7 @@ header > .controls > a {
 	padding: 10px;
 	background-color: rgba(67, 6, 165, 0.932);
 	overflow-y: scroll;
+	color: #fff;
 }
 
 #details > .content > h1:first-child {
@@ -149,10 +150,15 @@ header > .controls > a {
 
 #details > .content > .portrait {
 	width: 135px;
-	height: 200px;
+	height: 150px;
 	overflow: hidden;
 	background-image: url(../images/carousel.jpg);
 	background-repeat: no-repeat;
+}
+
+#details > .content > p {
+	font-size: 1.6rem;
+	line-height: 1.5;
 }
 
 .person1 {
