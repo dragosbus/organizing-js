@@ -1,15 +1,23 @@
-$(document).ready(function(){
-
-	var $items = $("[rel=js-carousel] > [rel=js-content] > [rel=js-items]");
-	var $content = $("[rel=js-details]");
-
-	// on click of a carousel item, do an Ajax request for
-	// the "details/2.html" (or whatever) file for the person
-	// clicked, and load those contents into the `$content` div.
-
-	// hint: you will probably want to use "event propagation"
-	// (aka "event delegation"), by attaching a single event
-	// handler the `$content` element rather than individual
-	// event handlers to each item in the carousel.
-
-});
+const Details = (function() {
+	
+	const items = select("[rel='js-items']");
+	const detailPage = select("[rel='js-details']");
+	
+	click(items, e=>{
+		e.preventDefault();
+		e.stopPropagation();
+		let t = e.target;
+		if(t.classList.contains("item")) {
+			get(t);
+		}
+	});
+	
+	const get = t => {
+		let url = t.getAttribute("rel");
+		url = url[url.length-1];
+		url = `${url}.html`;
+		
+		return fetch(`./details/${url}`).then(res=>res.text()).then(text=>detailPage.innerHTML = text);
+	};
+	
+}());
